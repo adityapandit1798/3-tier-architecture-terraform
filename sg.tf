@@ -7,6 +7,12 @@ resource "aws_security_group" "Ec2_seq_grp" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+   ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1" # All protocols
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   egress { /*outbound traffic*/
     from_port   = 0
     to_port     = 0
